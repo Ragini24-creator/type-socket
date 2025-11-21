@@ -10,10 +10,10 @@ schema-safe typed RPC system on WebSockets with an auto-generated client
 │   event/router file  │         │  - router + handlers    │
 │   (events.ts)        │         │  - zod validation       │
 └──────────────────────┘         │  - runtime (ws server)  │
-         ▲                        │  - broadcast/rooms      │
-         │ generate client        └───────┬─────────────────┘
-         │                                  │ ws messages
-         │                                  ▼
+         ▲                       |  - broadcast/rooms      │
+         │ generate client       └───────┬─────────────────┘
+         │                               │ ws messages
+         │                               ▼
 ┌──────────────────────┐         ┌─────────────────────────┐
 │ Generated client lib │  ◀───── │    Browser / Node app   │
 │ (ts file)            │         │  - typed calls:         │
