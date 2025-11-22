@@ -1,7 +1,7 @@
 ## Type-Socket 
 schema-safe typed RPC system on WebSockets with an auto-generated client
 
-
+```
 
 ## High-level architecture 
 
@@ -10,10 +10,10 @@ schema-safe typed RPC system on WebSockets with an auto-generated client
 │   event/router file  │         │  - router + handlers    │
 │   (events.ts)        │         │  - zod validation       │
 └──────────────────────┘         │  - runtime (ws server)  │
-         ▲                        │  - broadcast/rooms      │
-         │ generate client        └───────┬─────────────────┘
-         │                                  │ ws messages
-         │                                  ▼
+         ▲                       |  - broadcast/rooms      │
+         │ generate client       └───────┬─────────────────┘
+         │                               │ ws messages
+         │                               ▼
 ┌──────────────────────┐         ┌─────────────────────────┐
 │ Generated client lib │  ◀───── │    Browser / Node app   │
 │ (ts file)            │         │  - typed calls:         │
@@ -21,6 +21,7 @@ schema-safe typed RPC system on WebSockets with an auto-generated client
 │ - types (from zod)   │         │  - event listeners      │
 └──────────────────────┘         └─────────────────────────┘
 
+```
 Data-flow for one call:
 
 Frontend calls client.chat.sendMessage(payload).
@@ -48,6 +49,7 @@ Demo App — small app that uses the generated client to show chat/presence or e
 
 ## Folder structure
 
+```
 type-socket/
 ├─ packages/
 │  ├─ server/               # server runtime + router definitions
@@ -61,8 +63,10 @@ type-socket/
 │      └─ src/
 ├─ package.json
 └─ README.md
+```
 
 ## tech stack & libs to use
+```
 
 Node.js (latest LTS)
 
@@ -77,4 +81,4 @@ uuid for request IDs
 esbuild or ts-node for quick runs
 
 simple templating or ts-morph for codegen
-
+```
