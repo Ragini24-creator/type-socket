@@ -1,14 +1,28 @@
 import  WebSocket, {WebSocketServer} from "ws";
+import { Events } from "./core/types";
+import { EventsRouter } from "./core/router";
 
 const wss = new WebSocketServer({port:8080});
+
+const router = new EventsRouter<Events>;
+
+router.on("ping",(data,client)=>{
+  console.log("Ping received");
+
+  client.send("pong",data)
+});
+
+router.on("join_room",(data,client)=>{
+  console.log("Join room");
+
+  client.send("Joined a room",data)
+})
 
 wss.on("connection",(ws)=>{
   console.log("Client connected")
 
-  ws.on("message",(data)=>{
-    const text = data.toString()
-    console.log(text)
-    ws.send(JSON.stringify({type:"echo", text}))
+  ws.on("message",(rawData)=>{
+     const {event,data} = JSON.parse(rawData.toString());
   });
 });
 
