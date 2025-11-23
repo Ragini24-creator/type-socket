@@ -7,12 +7,25 @@ export class EventsRouter<E>{
           this.handlers[event] = handler;
     }
 
+    
+
     handle<K extends keyof E>(event:K , data:E[K],client:any) {
         const handler = this.handlers[event]
 
-        if(handler) handler(data , client);
+        if (!handler) {
+        client.send(JSON.stringify({
+            event: "error",
+            data: { message: `Invalid incoming event ${String(event)}` }
+        }));
+        return;   
     }
-}
+
+        handler(data , client);
+
+
+        }
+    }
+
 
 
 
