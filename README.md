@@ -21,8 +21,8 @@ This is a **soft submission / WIP** for Hack This Fall 2025.
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/<Ragini24-creator>/<type-socket>.git
-cd <repo-name>
+git clone https://github.com/Ragini24-creator/type-socket.git
+cd type-socket
 ```
 
 2. Install dependencies:
