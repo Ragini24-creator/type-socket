@@ -21,7 +21,7 @@ This is a **soft submission / WIP** for Hack This Fall 2025.
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/<your-username>/<repo-name>.git
+git clone https://github.com/<Ragini24-creator>/<type-socket>.git
 cd <repo-name>
 ```
 
