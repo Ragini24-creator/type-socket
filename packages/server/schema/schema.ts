@@ -14,10 +14,16 @@ export const echo = z.object({
   }),
 });
 
+export const join_room = z.object({
+  event: z.literal("join_room"),
+  roomId: z.string(),
+});
+
 
 export const schemas = {
     ping:ping,
-    echo:echo
+    echo:echo,
+    join_room : join_room
 };
 
 
