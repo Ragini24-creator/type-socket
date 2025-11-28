@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:server": "ts-node-dev --respawn --transpile-only packages/server/src/index.ts",
-    "dev:client": "http-server packages/demo-client -p 3800"
+    "dev:client": "http-server packages/demo-client -p 3800",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "generate": "ts-node packages/scripts/extract.ts"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +28,8 @@
     "nodemon": "^3.1.11",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.9.3"
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitepress": "^1.6.4"
   }
 }
